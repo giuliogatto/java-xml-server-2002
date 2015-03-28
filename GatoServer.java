@@ -56,19 +56,19 @@ public class GatoServer {
 			System.out.println ("listaCl: "+listaCl);
 			// prima costruisco la lista in formato xml
 			System.out.println ("listaclients,lunghezza: "+clients.size());
-	        while (enum.hasMoreElements()) {
-	            GatoThread c = (GatoThread)enum.nextElement();
-	            
-				// creo la lista dei clients che non siano impegnati in partite
-				if (c.ingioco<1)
-					{
-					lunghezzalista++;
-					Element clia =new Element("P");
-					clia.setText(c.nome);
-					root.addContent(clia);
-					System.out.println (c+" con nome:"+c.nome);
-					}
-	        }
+		        while (enum.hasMoreElements()) {
+		            GatoThread c = (GatoThread)enum.nextElement();
+		            
+					// creo la lista dei clients che non siano impegnati in partite
+					if (c.ingioco<1)
+						{
+						lunghezzalista++;
+						Element clia =new Element("P");
+						clia.setText(c.nome);
+						root.addContent(clia);
+						System.out.println (c+" con nome:"+c.nome);
+						}
+		        }
 			// riaggiorno il numero clients disponibili nella lista
 			lungh = String.valueOf(lunghezzalista); 
 			numcli.setText(lungh);
@@ -221,7 +221,7 @@ class GatoThread extends Thread {
 					 new OutputStreamWriter(
 						  socket.getOutputStream())), true);
 				    // se per caso viene lanciata una eccezione
-				    // sarà il chiamante ad essere responsabile 
+				    // sarÃ  il chiamante ad essere responsabile 
 				    // di gestirla e chiudere il socket
 			 } catch(IOException ioe) {
 
@@ -318,7 +318,7 @@ class GatoThread extends Thread {
 			}
 			if (register.equals("accetto"))
 			{
-				// la sfida è stata accettata, messaggio per lo sfidante
+				// la sfida Ã¨ stata accettata, messaggio per lo sfidante
 				List concorrenti=el.getChildren();
 				Element sfidant=(Element)concorrenti.get(0);
 				String sfidante= sfidant.getText();
